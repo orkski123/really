@@ -1,0 +1,14 @@
+- name: Run application
+  run: python Quiz.py  # เปลี่ยนชื่อสคริปต์ Python ของคุณ
+
+- name: Install dependencies
+  run: |
+    pip install -r requirements.txt  # ตรวจสอบว่าไฟล์ requirements.txt อยู่ใน repository หรือไม่
+
+- name: Save Google Cloud credentials
+  run: echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > credentials.json
+
+- name: Set up Python
+  uses: actions/setup-python@v4
+  with:
+    python-version: '3.11.11'  # เปลี่ยนเป็นเวอร์ชั่นที่ต้องการ
